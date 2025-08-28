@@ -272,6 +272,125 @@
   });
 </script>
  
+<!-- <script>
+   const coinEl = document.querySelectorAll("nav .flex.items-center.gap-4 > div p")[1];
+const historyContainer = document.querySelector("#service-histoy");
+ let coins = 100; 
+  coinEl.textContent = coins;
+    const callButtons = document.querySelectorAll(".bg-sky-500");
+ callButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Find service info (card context)
+      const card = btn.closest(".bg-slate-50");
+      const serviceName = card.querySelector("h1").textContent;
+      const serviceNumber = card.querySelector("p.text-4xl").textContent;
+
+      // Check coins
+      if (coins < 20) {
+        alert("Not enough coins to make a call!");
+        return;
+      }
+        coinEl.textContent = coins;
+
+      // Alert
+      alert(`Calling ${serviceName} (${serviceNumber}) ...`);
+
+      // Add to history
+      const historyItem = document.createElement("div");
+      historyItem.className = "flex justify-between items-center bg-white rounded-lg shadow px-3 py-2 my-2";
+      historyItem.innerHTML = `
+        <span class="font-semibold">${serviceName}</span>
+        <span class="text-sky-600">${serviceNumber}</span>
+      `;
+      historyContainer.appendChild(historyItem);
+    });
+  });
+
+  // Clear history button
+  const clearBtn = document.querySelector("#service-histoy button");
+  clearBtn.addEventListener("click", () => {
+    historyContainer.querySelectorAll("div.my-2").forEach(item => item.remove());
+  });
+</script> -->
+<script>
+  
+ 
+  const coinEl = document.querySelectorAll("nav .flex.items-center.gap-4 > div p")[1];
+
+
+  const copyEl = document.querySelectorAll("nav .flex.items-center.gap-4 > div p")[2];
+
+  const historyContainer = document.querySelector("#service-histoy");
+
+ 
+  let coins = 100; 
+  let copyCount = 0;
+
+
+  coinEl.textContent = coins;
+  copyEl.textContent = copyCount;
+
+ 
+  const callButtons = document.querySelectorAll(".bg-sky-500");
+  callButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".bg-slate-50");
+      const serviceName = card.querySelector("h1").textContent;
+      const serviceNumber = card.querySelector("p.text-4xl").textContent;
+
+      if (coins < 20) {
+        alert("Not enough coins to make a call!");
+        return;
+      }
+
+      // Deduct coins
+      coins -= 20;
+      coinEl.textContent = coins;
+
+      // Alert
+      alert(`Calling ${serviceName} (${serviceNumber}) ...`);
+
+      // Add to history
+      const historyItem = document.createElement("div");
+      historyItem.className = "flex justify-between items-center bg-white rounded-lg shadow px-3 py-2 my-2";
+      historyItem.innerHTML = `
+        <span class="font-semibold">${serviceName}</span>
+        <span class="text-sky-600">${serviceNumber}</span>
+      `;
+      historyContainer.appendChild(historyItem);
+    });
+  });
+
+  
+  const copyButtons = document.querySelectorAll(".bg-slate-200");
+  copyButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".bg-slate-50");
+      const serviceNumber = card.querySelector("p.text-4xl").textContent;
+
+      // Copy to clipboard
+      navigator.clipboard.writeText(serviceNumber)
+        .then(() => {
+          // Increase count
+          copyCount++;
+          copyEl.textContent = copyCount;
+
+          // Alert
+          alert(`Number copied: ${serviceNumber}`);
+        })
+        .catch(err => {
+          alert("Failed to copy number: " + err);
+        });
+    });
+  });
+
+  // Clear history button
+  const clearBtn = document.querySelector("#service-histoy button");
+  clearBtn.addEventListener("click", () => {
+    historyContainer.querySelectorAll("div.my-2").forEach(item => item.remove());
+  });
+</script>
+
 
 
 
