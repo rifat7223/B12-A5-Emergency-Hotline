@@ -1,0 +1,110 @@
+body{
+  background: rgba(245, 255, 246, 1);;
+}
+
+/* front */
+.hind-madurai {
+  font-family: "Hind Madurai", sans-serif;
+ 
+  font-style: normal;
+}
+
+
+/* header section */
+
+.navbar{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.nav-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-icon-tittle{
+    line-height: 40px;
+    color: rgba(0, 103, 71, 1);
+    font-size: 3rem;
+    font-weight: 800px;
+}
+.nav-life-tittle img{
+width: 30px;
+}
+.nav-icon-img{
+   width: 100px;
+}
+
+.nav-life{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    
+   
+}
+.nav-life-tittle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.nav-life-tittle{
+    background-color: rgba(65, 255, 107, 0.1);
+    border-radius: 50px;
+    padding:5px 12px;
+}
+.copy{
+    background-color:rgba(0, 166, 62, 1);
+    padding: 7px 15px;
+}
+
+/* banner section */
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding:25px 0px 50px;
+    
+   background: linear-gradient(90.00deg, rgba(1.251827359199524, 49.64006805419922, 34.606834411621094, 1),rgba(0, 103, 71, 1) 50%,rgba(1, 50, 35, 1) 100%);
+}
+
+.banner-tittle{
+    font-size: 40px;
+    font-weight: 700;
+}
+.banner-description{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.national-emer{
+    display: flex;
+    align-items: center;
+}
+.card-1{
+    background-color: white;
+    padding: 40px;
+}
+
+
+.calling{
+    display: flex;
+}
+
+.call-icon{
+    display: flex;
+    
+    
+}
+.copy-icon{
+    display: flex;
+}
+
